@@ -9,7 +9,7 @@ router.get('/getAll', residentController.getAll)
 
 router.post('/register', residentController.register)
 
-router.put('/update/:nik' , residentController.update)
+router.put('/update/:nik', residentController.update)
 
 router.delete('/delete/:nik', residentController.delete)
 
