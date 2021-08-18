@@ -1,6 +1,4 @@
-const {
-    Resident
-} = require("../models/index")
+const {Resident} = require("../models/index")
 
 class ResidentController {
     static homepage(req, res) {
@@ -17,12 +15,12 @@ class ResidentController {
             })
         } else {
             Resident.findOne({where: {nik: req.params.nik}})
-            .then((data => {
+            .then((data) => {
                 res.status(200).json({
                     message: "getOne berhasil",
                     data: data
                 })
-            }))
+            })
             .catch((err) => {
                 res.status(500).json({
                     message: "error",
@@ -118,12 +116,12 @@ class ResidentController {
             })
         } else {
             Resident.destroy({where: {nik: req.params.nik}})
-            .then((data => {
+            .then((data) => {
                 res.status(200).json({
                     message: "delete berhasil",
                     data: data
                 })
-            }))
+            })
             .catch((err) => {
                 res.status(500).json({
                     message: "Internal server error",
